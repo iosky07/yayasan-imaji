@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Blog;
+use App\Models\Content;
 use App\Models\Gallery;
 use App\Models\Member;
 use App\Models\Regulation;
@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     public function beranda() {
-        $content = Blog::orderBy('id','desc')->get()->take(3);
+        $content = Content::orderBy('id','desc')->get()->take(3);
         $galleries = Gallery::orderBy('id','desc')->get()->take(4);
 //        dd($content);
         return view('pages.page-main', compact('content', 'galleries'));
@@ -22,7 +22,7 @@ class SiteController extends Controller
     }
 
     public function blogShow($id) {
-        $content = Blog::whereId($id)->get();
+        $content = Content::whereId($id)->get();
 //        dd($content);
         return view('pages.page-berita', compact('content'));
     }

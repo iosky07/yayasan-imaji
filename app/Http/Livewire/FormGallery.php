@@ -29,6 +29,7 @@ class FormGallery extends Component
         if ($this->dataId!=''){
             $m = Gallery::findOrFail($this->dataId);
             $this->gallery=[
+                'title'=>$m->title,
                 'thumbnail'=>$m->thumbnail
             ];
         }

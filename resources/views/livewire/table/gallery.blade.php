@@ -6,6 +6,10 @@
                     ID
                     @include('components.sort-icon', ['field' => 'id'])
                 </a></th>
+                <th><a wire:click.prevent="sortBy('title')" role="button" href="#">
+                    Judul
+                    @include('components.sort-icon', ['field' => 'title'])
+                </a></th>
                 <th><a wire:click.prevent="sortBy('name')" role="button" href="#">
                     Uploader
                     @include('components.sort-icon', ['field' => 'name'])
@@ -25,6 +29,7 @@
             @foreach ($galleries as $m)
                 <tr x-data="window.__controller.dataTableController({{ $m->id }})">
                     <td>{{ $m->id }}</td>
+                    <td>{{ $m->title }}</td>
                     <td>{{ $m->user->name }}</td>
                     <td><img src="{{ asset('storage/thumbnail/gallery/'.$m->thumbnail) }}" alt="" style="width: 200px"></td>
                     <td>{{ $m->created_at->format('d M Y H:i') }}</td>

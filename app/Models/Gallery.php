@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $user_id
+ * @property string $title
  * @property string $thumbnail
  * @property string $created_at
  * @property string $updated_at
@@ -24,7 +25,7 @@ class Gallery extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'thumbnail', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'title', 'thumbnail', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -37,7 +38,7 @@ class Gallery extends Model
     public static function search($query)
     {
         return empty($query) ? static::query()
-            : static::where('name', 'like', '%'.$query.'%')
-                ->orWhere('email', 'like', '%'.$query.'%');
+            : static::where('title', 'like', '%'.$query.'%')
+                ->orWhere('name', 'like', '%'.$query.'%');
     }
 }

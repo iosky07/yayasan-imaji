@@ -1,5 +1,8 @@
 <div id="form-create" class=" card p-4">
     <form wire:submit.prevent="{{ $action }}">
+
+        <x-input type="text" title="Judul" model="gallery.title"/>
+
         <x-input type="file" title="Foto" model="thumbnail"/>
         <div wire:loading wire:target="thumbnail">
             Proses upload, harap tunggu hingga gambar tertampilkan
