@@ -16,11 +16,11 @@ $links = [
                 ]
             ],
             [
-                "section_text" => "Berita",
+                "section_text" => "Konten",
                 "section_icon" => "fa fa-file",
                 "section_list" => [
-                    ["href" => "admin.blog.index", "text" => "Data Berita"],
-                    ["href" => "admin.blog.create", "text" => "Buat Berita"]
+                    ["href" => "admin.content.index", "text" => "Data Konten"],
+                    ["href" => "admin.content.create", "text" => "Buat Konten"]
                 ]
             ],
             [

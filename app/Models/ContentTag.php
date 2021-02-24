@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property integer $id
- * @property integer $blog_id
+ * @property integer $content_id
  * @property integer $tag_id
  * @property string $created_at
  * @property string $updated_at
- * @property Blog $blog
+ * @property Content $content
  * @property Tag $tag
  */
-class BlogTag extends Model
+class ContentTag extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
@@ -25,14 +25,14 @@ class BlogTag extends Model
     /**
      * @var array
      */
-    protected $fillable = ['blog_id', 'tag_id', 'created_at', 'updated_at'];
+    protected $fillable = ['content_id', 'tag_id', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
-    public function blog()
+    public function content()
     {
-        return $this->belongsTo('App\Models\Blog');
+        return $this->belongsTo('App\Models\Content');
     }
 
     /**

@@ -29,6 +29,7 @@ class CreateContentsTable extends Migration
                 ->on('users')
                 ->onDelete('set null')
                 ->onUpdate('cascade');
+
             $table->foreign('type_id')
                 ->references('id')
                 ->on('content_types')

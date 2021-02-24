@@ -41,7 +41,6 @@ class FormBlog extends Component
                 'contents'=>$blog->contents,
                 'status'=>$blog->status,
                 'thumbnail'=>$blog->thumbnail,
-
             ];
         }
         $this->optionStatus=[

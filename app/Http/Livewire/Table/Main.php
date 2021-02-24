@@ -51,18 +51,18 @@ class Main extends Component
                     ])
                 ];
 
-            case 'blog':
-                $blogs = $this->model::search($this->search)
+            case 'content':
+                $contents = $this->model::search($this->search)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
                 return [
-                    "view" => 'livewire.table.blog',
-                    "blogs" => $blogs,
+                    "view" => 'livewire.table.content',
+                    "contents" => $contents,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.blog.create'),
-                            'create_new_text' => 'Buat Berita Baru',
+                            'create_new' => route('admin.content.create'),
+                            'create_new_text' => 'Buat Konten Baru',
                             'export' => '#',
                             'export_text' => 'Export'
                         ]

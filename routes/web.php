@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\RegulationController;
 use App\Http\Controllers\GalleryController;
 //use App\Http\Controllers\GalleryController;
@@ -60,7 +61,7 @@ Route::get('/inner-page', function () { //buat liat template single page / inner
 //Route::name('admin.')->middleware(['auth:sanctum', 'verified'])->prefix('admin/')->group(function() {
 Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verified'])->group(function() {
     Route::view('/dashboard', "dashboard")->name('dashboard');
-    Route::resource('blog', BlogController::class);
+    Route::resource('content', ContentController::class);
     Route::resource('regulation', RegulationController::class);
     Route::resource('gallery', GalleryController::class);
 //    Route::middleware(['checkRole:1']){}
