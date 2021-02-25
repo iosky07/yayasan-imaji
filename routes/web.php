@@ -2,7 +2,13 @@
 
 use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\ContentTypeController;
+use App\Http\Controllers\Admin\ProjectBudgetController;
 use App\Http\Controllers\Admin\RegulationController;
+use App\Http\Controllers\Admin\StatusBudgetController;
+use App\Http\Controllers\Admin\TagController;
+use App\Http\Controllers\Admin\TypeBudgetController;
+use App\Http\Controllers\Admin\TypeFinanceController;
 use App\Http\Controllers\GalleryController;
 //use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteController;
@@ -62,8 +68,13 @@ Route::get('/inner-page', function () { //buat liat template single page / inner
 Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verified'])->group(function() {
     Route::view('/dashboard', "dashboard")->name('dashboard');
     Route::resource('content', ContentController::class);
-    Route::resource('regulation', RegulationController::class);
+    Route::resource('content-type', ContentTypeController::class);
+    Route::resource('project-budget', ProjectBudgetController::class);
+    Route::resource('status-budget', StatusBudgetController::class);
+    Route::resource('type-budget', TypeBudgetController::class);
+    Route::resource('type-finance', TypeFinanceController::class);
     Route::resource('gallery', GalleryController::class);
+    Route::resource('tag', TagController::class);
 //    Route::middleware(['checkRole:1']){}
     Route::get('/user', [ UserController::class, "index" ])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

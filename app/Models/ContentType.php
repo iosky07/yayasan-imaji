@@ -15,7 +15,7 @@ class ContentType extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
-     * 
+     *
      * @var string
      */
     protected $keyType = 'integer';
@@ -31,5 +31,11 @@ class ContentType extends Model
     public function contents()
     {
         return $this->hasMany('App\Models\Content', 'type_id');
+    }
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('title', 'like', '%'.$query.'%');
     }
 }

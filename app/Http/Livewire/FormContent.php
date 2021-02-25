@@ -61,6 +61,7 @@ class FormContent extends Component
 
         $content = Content::orderBy('id', 'desc')->pluck('id');
 
+        dd($this->contentTags);
         foreach ($this->contentTags as $tag) {
             $this->contentTags['content_id'] = $content[0];
             $this->contentTags['tag_id'] = $tag;

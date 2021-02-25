@@ -32,11 +32,51 @@ $links = [
                 ]
             ],
             [
-                "section_text" => "JDIH",
+                "section_text" => "Tag",
                 "section_icon" => "fa fa-file",
                 "section_list" => [
-                    ["href" => "admin.regulation.index", "text" => "Data JDIH"],
-                    ["href" => "admin.regulation.create", "text" => "Buat JDIH"]
+                    ["href" => "admin.tag.index", "text" => "Data Tag"],
+                    ["href" => "admin.tag.create", "text" => "Tambah Tag"]
+                ]
+            ],
+            [
+                "section_text" => "Tipe Konten",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.content-type.index", "text" => "Data Tipe Konten"],
+                    ["href" => "admin.content-type.create", "text" => "Tambah Tipe Konten"]
+                ]
+            ],
+            [
+                "section_text" => "Status Anggaran",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.status-budget.index", "text" => "Data Status Anggaran"],
+                    ["href" => "admin.status-budget.create", "text" => "Tambah Status Anggaran"]
+                ]
+            ],
+            [
+                "section_text" => "Projek Anggaran",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.project-budget.index", "text" => "Data Projek Anggaran"],
+                    ["href" => "admin.project-budget.create", "text" => "Tambah Projek Anggaran"]
+                ]
+            ],
+            [
+                "section_text" => "Tipe Anggaran",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.type-budget.index", "text" => "Data Tipe Anggaran"],
+                    ["href" => "admin.type-budget.create", "text" => "Tambah Tipe Anggaran"]
+                ]
+            ],
+            [
+                "section_text" => "Tipe Finansial",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.type-finance.index", "text" => "Data Tipe Finansial"],
+                    ["href" => "admin.type-finance.create", "text" => "Tambah Tipe Finansial"]
                 ]
             ],
         ],

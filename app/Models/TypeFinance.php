@@ -9,9 +9,9 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $created_at
  * @property string $updated_at
- * @property ContentTag[] $contentTags
+ * @property Finance[] $finances
  */
-class Tag extends Model
+class TypeFinance extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
@@ -28,9 +28,9 @@ class Tag extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function contentTags()
+    public function finances()
     {
-        return $this->hasMany('App\Models\ContentTag');
+        return $this->hasMany('App\Models\Finance', 'type_id');
     }
 
     public static function search($query)

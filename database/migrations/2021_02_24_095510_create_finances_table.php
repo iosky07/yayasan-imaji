@@ -24,6 +24,12 @@ class CreateFinancesTable extends Migration
             $table->date('publish_date')->nullable();
             $table->string('file');
             $table->timestamps();
+
+            $table->foreign('type_id')
+                ->references('id')
+                ->on('type_finances')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

@@ -108,6 +108,120 @@ class Main extends Component
                 ];
                 break;
 
+            case 'tag':
+                $tags = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.tag',
+                    "tags" => $tags,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.tag.create'),
+                            'create_new_text' => 'Buat Tag Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'content-type':
+                $contentTypes = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.tag',
+                    "contentTypes" => $contentTypes,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.content-type.create'),
+                            'create_new_text' => 'Buat Tipe Konten Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'status-budget':
+                $statusBudgets = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.status-budget',
+                    "statusBudgets" => $statusBudgets,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.status-budget.create'),
+                            'create_new_text' => 'Buat Status Anggaran Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'project-budget':
+                $projectBudgets = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.project-budget',
+                    "projectBudgets" => $projectBudgets,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.project-budget.create'),
+                            'create_new_text' => 'Buat Proyek Anggaran Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'type-budget':
+                $typeBudgets = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.type-budget',
+                    "typeBudgets" => $typeBudgets,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.type-budget.create'),
+                            'create_new_text' => 'Buat Tipe Anggaran Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'type-finance':
+                $typeFinances = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.type-finance',
+                    "typeFinances" => $typeFinances,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.type-finance.create'),
+                            'create_new_text' => 'Buat Tipe Finansial Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
             default:
                 # code...
                 break;
