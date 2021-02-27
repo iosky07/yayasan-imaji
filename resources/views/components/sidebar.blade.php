@@ -79,6 +79,22 @@ $links = [
                     ["href" => "admin.type-finance.create", "text" => "Tambah Tipe Finansial"]
                 ]
             ],
+            [
+                "section_text" => "Faq",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.faq.index", "text" => "Data Faq"],
+                    ["href" => "admin.faq.create", "text" => "Tambah Faq"]
+                ]
+            ],
+            [
+                "section_text" => "Budget",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.budget.index", "text" => "Data Budget"],
+                    ["href" => "admin.budget.create", "text" => "Tambah Budget"]
+                ]
+            ],
         ],
         "text" => "Manajemen Website",
         "is_multi" => true,

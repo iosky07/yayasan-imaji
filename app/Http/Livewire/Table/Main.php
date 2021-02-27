@@ -222,6 +222,44 @@ class Main extends Component
                 ];
                 break;
 
+            case 'faq':
+                $faqs = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.faq',
+                    "faqs" => $faqs,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.faq.create'),
+                            'create_new_text' => 'Buat QnA Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'budget':
+                $budgets = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.budget',
+                    "budgets" => $budgets,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.budget.create'),
+                            'create_new_text' => 'Buat Budget Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
             default:
                 # code...
                 break;
