@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\ContentTypeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\ProjectBudgetController;
+use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\StatusBudgetController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TypeBudgetController;
@@ -37,8 +38,8 @@ Route::get('/dashboard', function () {
 Route::get('/', [SiteController::class, 'beranda'])->name('main-landing');
 Route::get('/berita', [SiteController::class, 'blog'])->name('blog');
 Route::get('/berita/{id}', [SiteController::class, 'blogShow'])->name('blog-show');
-Route::get('/gallery', [SiteController::class, 'gallery'])->name('gallery');
-Route::get('/peraturan', [SiteController::class, 'regulation'])->name('regulation');
+Route::get('/galeri', [SiteController::class, 'gallery'])->name('gallery');
+Route::get('/tentang-kami', [SiteController::class, 'about'])->name('about');
 Route::post('/subscribe', [SiteController::class, 'subscribe'])->name('subscribe');
 Route::post('/aspirasi', [SiteController::class, 'aspiration'])->name('aspiration');
 
@@ -60,6 +61,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verif
     Route::resource('tag', TagController::class);
     Route::resource('faq', FaqController::class);
     Route::resource('budget', BudgetController::class);
+    Route::resource('report', ReportController::class);
 //    Route::middleware(['checkRole:1']){}
     Route::get('/user', [ UserController::class, "index" ])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

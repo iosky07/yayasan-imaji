@@ -37,10 +37,6 @@
       </div>
     </section><!-- End Featured Services Section -->
 
-
-
-
-
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
       <div class="container" data-aos="fade-up">
@@ -55,7 +51,8 @@
           @foreach($content as $c)
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="gambar"><img src="{{ asset('storage/thumbnail/'.$c->thumbnail) }}" class="img-fluid" alt=""></div>
+{{--                {{$c->thumbnail}}--}}
+              <div class="gambar"><img src="{{ asset('storage/thumbnail/content/'.$c->thumbnail) }}" class="img-fluid" alt=""></div>
               <h4><a href="{{ route('blog-show', $c->id) }}">{{ $c->title }}</a></h4>
               <p>{!!Str::limit($c->contents,100, '...')!!}</p>
             </div>

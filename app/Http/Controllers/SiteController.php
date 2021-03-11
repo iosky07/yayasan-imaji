@@ -32,10 +32,10 @@ class SiteController extends Controller
         return view('pages.page-gallery', compact('galleries'));
     }
 
-    public function regulation() {
-        $rules = Regulation::all();
-//        dd($rules);
-        return view('pages.page-peraturan', compact('rules'));
+    public function about() {
+//        $rules = Regulation::all();
+////        dd($rules);
+        return view('pages.page-about');
     }
 
     public function subscribe(Request $request) {

@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\Blog;
+use App\Models\Content;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,13 +15,14 @@ class SearchContent extends Component
     public function searching(){
 
 //        dd($this->search);
-        $this->blog=Blog::class;
-        return Blog::search($this->search)
+        $this->blog=Content::class;
+        return Content::search($this->search)
         ->paginate(3);
     }
 
     public function render()
     {
+//        dd("asdsdasd");
         $content = $this->searching();
         return view('livewire.search-content',compact('content'));
     }

@@ -55,13 +55,13 @@ class FormContent extends Component
 //        dd($this->content['slug']);
 
         $this->content['thumbnail'] = md5(rand()).'.'.$this->thumbnail->getClientOriginalExtension();
-        $this->thumbnail->storeAs('public/thumbnail', $this->content['thumbnail']);
+        $this->thumbnail->storeAs('public/thumbnail/content/', $this->content['thumbnail']);
 //        dd($this->content);
         Content::create($this->content);
 
         $content = Content::orderBy('id', 'desc')->pluck('id');
 
-        dd($this->contentTags);
+//        dd($this->contentTags);
         foreach ($this->contentTags as $tag) {
             $this->contentTags['content_id'] = $content[0];
             $this->contentTags['tag_id'] = $tag;
@@ -73,6 +73,7 @@ class FormContent extends Component
 
     public function update() {
 
+        $this->thumbnail->storeAs('public/thumbnail/content/', $this->content['thumbnail']);
         Content::find($this->dataId)->update($this->content);
 
         $this->emit('swal:alert', [

@@ -35,7 +35,7 @@
                     <td>{{ $b->id }}</td>
                     <td>{{ $b->title }}</td>
                     <td>{{ $b->contentType->title }}</td>
-                    <td><img src="{{ asset('storage/thumbnail/'.$b->thumbnail) }}" alt="" style="width: 200px"></td>
+                    <td><img src="{{ asset('storage/thumbnail/content/'.$b->thumbnail) }}" alt="" style="width: 200px"></td>
                     <td>{{ $b->view }}</td>
                     <td>{{ $b->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">

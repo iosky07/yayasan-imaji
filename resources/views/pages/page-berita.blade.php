@@ -9,7 +9,7 @@
         @foreach($content as $c)@endforeach
         <div class="portfolio-details-container">
 
-          <img src="{{ asset('storage/thumbnail/'.$c->thumbnail) }}" class="img-fluid" alt="">
+          <img src="{{ asset('storage/thumbnail/content/'.$c->thumbnail) }}" class="img-fluid" alt="">
 
           <div class="portfolio-info">
             <h3>Informasi Berita</h3>

@@ -60,9 +60,9 @@
         <ul>
             <li class="{{ Request::routeIs('main-landing') ? 'active' : '' }}"><a href="{{ route('main-landing') }}">Beranda</a></li>
             <li class="{{ Request::routeIs('gallery') ? 'active' : '' }}"><a href="{{ route('gallery') }}">Galeri</a></li>
-            <li class="{{ Request::routeIs('regulation') ? 'active' : '' }}"><a href="{{ route('regulation') }}">Peraturan</a></li>
             <li class="{{ Request::routeIs('blog') ? 'active' : '' }}"><a href="{{ route('blog') }}">Berita</a></li>
-          <li><a href="">Aspirasi</a></li>
+            <li class="{{ Request::routeIs('about') ? 'active' : '' }}"><a href="{{ route('about') }}">Tentang Kami</a></li>
+{{--          <li><a href="">Aspirasi</a></li>--}}
           <!-- <li class="drop-down"><a href="">Drop Down</a>
             <ul>
               <li><a href="#">Drop Down 1</a></li>
@@ -88,7 +88,7 @@
     </div>
   </header><!-- End Header -->
 
-  @if(Route::is('gallery') or Route::is('regulation') or Route::is('blog') or Route::is('blog-show'))
+  @if(Route::is('gallery') or Route::is('about') or Route::is('blog') or Route::is('blog-show'))
       <main id="main" data-aos="fade-up">
 
           <!-- ======= Breadcrumbs ======= -->
@@ -151,9 +151,8 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('main-landing') }}">Beranda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('gallery') }}">Galeri</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('regulation') }}">Peraturan</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{{ route('blog') }}">Berita</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('aspiration') }}">Aspirasi</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{{ route('about') }}">Tentang Kami</a></li>
             </ul>
           </div>
 

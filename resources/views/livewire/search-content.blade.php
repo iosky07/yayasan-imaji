@@ -18,8 +18,7 @@
         @foreach($content as $c)
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" >
                 <div class="icon-box">
-                    <div class="gambar"><img src="{{ asset('storage/thumbnail/'.$c->thumbnail) }}" class="img-fluid"
-                                             alt="">
+                    <div class="gambar"><img src="{{ asset('storage/thumbnail/content/'.$c->thumbnail) }}" class="img-fluid" alt="">
                     </div>
                     <h4><a href="{{ route('blog-show', $c->id) }}">{{ $c->title }}</a></h4>
                     <p>{!!Str::limit($c->contents,100, '...')!!}</p>

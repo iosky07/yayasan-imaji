@@ -95,6 +95,14 @@ $links = [
                     ["href" => "admin.budget.create", "text" => "Tambah Budget"]
                 ]
             ],
+            [
+                "section_text" => "Report",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.report.index", "text" => "Data Laporan"],
+                    ["href" => "admin.report.create", "text" => "Tambah Laporan"]
+                ]
+            ],
         ],
         "text" => "Manajemen Website",
         "is_multi" => true,

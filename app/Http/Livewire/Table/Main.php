@@ -260,6 +260,25 @@ class Main extends Component
                 ];
                 break;
 
+            case 'report':
+                $reports = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.report',
+                    "reports" => $reports,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.report.create'),
+                            'create_new_text' => 'Buat Laporan Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
             default:
                 # code...
                 break;
