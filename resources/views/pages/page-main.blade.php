@@ -1,5 +1,6 @@
 @extends('template.main')
 @section('content')
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
@@ -22,20 +23,33 @@
           <p>Berikut merupakan dokumentasi kegiatan kami</p>
         </div>
 
-        <div class="row">
+        <div class="owl-carousel owl-theme mt-5">
             @foreach($galleries as $m)
-                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="member">
+                <div class="" data-aos="fade-up" data-aos-delay="100">
                         <div class="member-img">
                             <img src="{{ asset('storage/thumbnail/gallery/'.$m->thumbnail) }}" class="img-fluid" alt="">
                         </div>
-                    </div>
                 </div>
             @endforeach
         </div>
 
       </div>
     </section><!-- End Featured Services Section -->
+
+{{--      <div class="owl-carousel owl-theme mt-5">--}}
+{{--          <div class="item"><h4>1</h4></div>--}}
+{{--          <div class="item"><h4>2</h4></div>--}}
+{{--          <div class="item"><h4>3</h4></div>--}}
+{{--          <div class="item"><h4>4</h4></div>--}}
+{{--          <div class="item"><h4>5</h4></div>--}}
+{{--          <div class="item"><h4>6</h4></div>--}}
+{{--          <div class="item"><h4>7</h4></div>--}}
+{{--          <div class="item"><h4>8</h4></div>--}}
+{{--          <div class="item"><h4>9</h4></div>--}}
+{{--          <div class="item"><h4>10</h4></div>--}}
+{{--          <div class="item"><h4>11</h4></div>--}}
+{{--          <div class="item"><h4>12</h4></div>--}}
+{{--      </div>--}}
 
     <!-- ======= Services Section ======= -->
     <section id="services" class="services">
@@ -95,4 +109,7 @@
       </section>
 
   </main><!-- End #main -->
+
 @endsection
+
+
