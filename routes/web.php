@@ -7,10 +7,10 @@ use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\ProjectBudgetController;
 use App\Http\Controllers\Admin\ReportController;
+use App\Http\Controllers\Admin\SpjController;
 use App\Http\Controllers\Admin\StatusBudgetController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TypeBudgetController;
-use App\Http\Controllers\Admin\TypeFinanceController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\SiteController;
 use App\Http\Controllers\UserController;
@@ -20,17 +20,6 @@ use Laravel\Jetstream\Http\Controllers\Livewire\ApiTokenController;
 use Laravel\Jetstream\Http\Controllers\Livewire\TeamController;
 use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
 use Laravel\Jetstream\Jetstream;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
 Route::get('/dashboard', function () {
     return redirect(route('admin.dashboard'));
@@ -57,13 +46,13 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verif
     Route::resource('project-budget', ProjectBudgetController::class);
     Route::resource('status-budget', StatusBudgetController::class);
     Route::resource('type-budget', TypeBudgetController::class);
-    Route::resource('type-finance', TypeFinanceController::class);
     Route::resource('gallery', GalleryController::class);
     Route::resource('tag', TagController::class);
     Route::resource('faq', FaqController::class);
     Route::resource('budget', BudgetController::class);
     Route::resource('report', ReportController::class);
     Route::resource('finance', FinanceController::class);
+    Route::resource('spj', SpjController::class);
 //    Route::middleware(['checkRole:1']){}
     Route::get('/user', [ UserController::class, "index" ])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

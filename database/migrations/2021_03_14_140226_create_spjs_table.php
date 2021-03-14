@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeFinancesTable extends Migration
+class CreateSpjsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateTypeFinancesTable extends Migration
      */
     public function up()
     {
-        Schema::create('type_finances', function (Blueprint $table) {
+        Schema::create('spjs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('money');
+            $table->string('file');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateTypeFinancesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('type_finances');
+        Schema::dropIfExists('spjs');
     }
 }

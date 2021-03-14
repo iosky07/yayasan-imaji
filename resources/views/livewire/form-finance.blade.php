@@ -3,7 +3,7 @@
 
         <x-input type="text" title="Judul" model="financy.title"/>
 
-        <x-select :options="$optionTypes" :selected="$financy['type_id']" title="Tipe" model="financy.type_id"/>
+        <x-select :options="$optionTypes" :selected="$financy['type']" title="Tipe" model="financy.type"/>
 
         <x-input type="text" title="Anggaran" model="financy.money"/>
 
@@ -11,7 +11,7 @@
 
         <x-input type="text" title="PIC(Eksternal)" model="financy.pic_external"/>
 
-        <x-date title="Tanggal Acara" model="financy.publish_date" type="datepicker"/>
+        <x-date title="Tanggal Pengeluaran" model="financy.publish_date" type="datepicker"/>
 
         <x-input type="text" title="Note" model="financy.note"/>
 

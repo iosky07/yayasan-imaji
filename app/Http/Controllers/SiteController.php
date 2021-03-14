@@ -33,8 +33,6 @@ class SiteController extends Controller
     }
 
     public function about() {
-//        $rules = Regulation::all();
-////        dd($rules);
         return view('pages.page-about');
     }
 

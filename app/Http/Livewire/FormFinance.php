@@ -12,19 +12,18 @@ class FormFinance extends Component
     use WithFileUploads;
     public $action;
     public $financy;
+    public $file;
     public $dataId;
     public $optionTypes;
 
     public function mount()
     {
-        $this->financy['type_id']='1';
-        $this->optionTypes = eloquent_to_options(TypeFinance::get(), 'id', 'title');
 
         if ($this->dataId!=''){
             $m = Finance::findOrFail($this->dataId);
             $this->financy=[
                 'title'=>$m->title,
-                'type_id'=>$m->type_id,
+                'type'=>$m->type,
                 'money'=>$m->money,
                 'pic_internal'=>$m->pic_internal,
                 'pic_external'=>$m->pic_external,
@@ -33,10 +32,18 @@ class FormFinance extends Component
                 'file'=>$m->file,
             ];
         }
+        $this->optionTypes=[
+            ['value'=>'Barang','title'=>'Barang'],
+            ['value'=>'Invoice','title'=>'Invoice'],
+            ['value'=>'Jasa','title'=>'Jasa'],
+        ];
     }
 
     public function create()
     {
+        $this->financy['file'] = md5(rand()).'.'.$this->file->getClientOriginalExtension();
+        $this->file->storeAs('public/file/finance/', $this->financy['file']);
+
         Finance::create($this->financy);
 
         $this->emit('swal:alert', [
@@ -50,6 +57,9 @@ class FormFinance extends Component
     }
 
     public function update() {
+
+        $this->financy['file'] = md5(rand()).'.'.$this->file->getClientOriginalExtension();
+        $this->file->storeAs('public/file/finance/', $this->financy['file']);
 
         Finance::find($this->dataId)->update($this->financy);
 

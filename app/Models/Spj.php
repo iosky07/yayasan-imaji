@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property string $title
+ * @property string $money
+ * @property string $file
  * @property string $created_at
  * @property string $updated_at
- * @property Finance[] $finances
  */
-class TypeFinance extends Model
+class Spj extends Model
 {
     /**
      * The "type" of the auto-incrementing ID.
@@ -23,15 +24,7 @@ class TypeFinance extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'created_at', 'updated_at'];
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function finances()
-    {
-        return $this->hasMany('App\Models\Finance', 'type_id');
-    }
+    protected $fillable = ['title', 'money', 'file', 'created_at', 'updated_at'];
 
     public static function search($query)
     {

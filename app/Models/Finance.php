@@ -30,7 +30,7 @@ class Finance extends Model
     /**
      * @var array
      */
-    protected $fillable = ['type_id', 'title', 'money', 'pic_internal', 'pic_external', 'note', 'publish_date', 'file', 'created_at', 'updated_at'];
+    protected $fillable = ['type', 'title', 'money', 'pic_internal', 'pic_external', 'note', 'publish_date', 'file', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

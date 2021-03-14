@@ -38,6 +38,7 @@ class FormGallery extends Component
 
     public function create()
     {
+        dd($this->gallery);
         $this->gallery['thumbnail'] = md5(rand()).'.'.$this->thumbnail->getClientOriginalExtension();
         $this->thumbnail->storeAs('public/thumbnail/gallery/', $this->gallery['thumbnail']);
 

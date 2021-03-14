@@ -48,38 +48,6 @@ $links = [
                 ]
             ],
             [
-                "section_text" => "Status Anggaran",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.status-budget.index", "text" => "Data Status Anggaran"],
-                    ["href" => "admin.status-budget.create", "text" => "Tambah Status Anggaran"]
-                ]
-            ],
-            [
-                "section_text" => "Projek Anggaran",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.project-budget.index", "text" => "Data Projek Anggaran"],
-                    ["href" => "admin.project-budget.create", "text" => "Tambah Projek Anggaran"]
-                ]
-            ],
-            [
-                "section_text" => "Tipe Anggaran",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.type-budget.index", "text" => "Data Tipe Anggaran"],
-                    ["href" => "admin.type-budget.create", "text" => "Tambah Tipe Anggaran"]
-                ]
-            ],
-            [
-                "section_text" => "Tipe Finansial",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.type-finance.index", "text" => "Data Tipe Finansial"],
-                    ["href" => "admin.type-finance.create", "text" => "Tambah Tipe Finansial"]
-                ]
-            ],
-            [
                 "section_text" => "Faq",
                 "section_icon" => "fa fa-file",
                 "section_list" => [
@@ -109,6 +77,14 @@ $links = [
                 "section_list" => [
                     ["href" => "admin.finance.index", "text" => "Data Keuangan"],
                     ["href" => "admin.finance.create", "text" => "Tambah Keuangan"]
+                ]
+            ],
+             [
+                "section_text" => "SPJ",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.spj.index", "text" => "Data SPJ"],
+                    ["href" => "admin.spj.create", "text" => "Tambah SPJ"]
                 ]
             ],
         ],

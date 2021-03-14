@@ -203,25 +203,6 @@ class Main extends Component
                 ];
                 break;
 
-            case 'type-finance':
-                $typeFinances = $this->model::search($this->search)
-                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
-                    ->paginate($this->perPage);
-
-                return [
-                    "view" => 'livewire.table.type-finance',
-                    "typeFinances" => $typeFinances,
-                    "data" => array_to_object([
-                        'href' => [
-                            'create_new' => route('admin.type-finance.create'),
-                            'create_new_text' => 'Buat Tipe Finansial Baru',
-                            'export' => '#',
-                            'export_text' => 'Export'
-                        ]
-                    ])
-                ];
-                break;
-
             case 'faq':
                 $faqs = $this->model::search($this->search)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
@@ -291,6 +272,25 @@ class Main extends Component
                         'href' => [
                             'create_new' => route('admin.finance.create'),
                             'create_new_text' => 'Buat Keuangan Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
+            case 'spj':
+                $spjs = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.spj',
+                    "spjs" => $spjs,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.spj.create'),
+                            'create_new_text' => 'Buat SPJ Baru',
                             'export' => '#',
                             'export_text' => 'Export'
                         ]

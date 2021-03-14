@@ -16,7 +16,7 @@ class CreateFinancesTable extends Migration
         Schema::create('finances', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->unsignedBigInteger('type_id');
+            $table->string('type');
             $table->string('money');
             $table->string('pic_internal')->nullable();
             $table->string('pic_external')->nullable();
@@ -24,12 +24,6 @@ class CreateFinancesTable extends Migration
             $table->date('publish_date')->nullable();
             $table->string('file');
             $table->timestamps();
-
-            $table->foreign('type_id')
-                ->references('id')
-                ->on('type_finances')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
         });
     }
 
