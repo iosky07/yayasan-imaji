@@ -103,6 +103,14 @@ $links = [
                     ["href" => "admin.report.create", "text" => "Tambah Laporan"]
                 ]
             ],
+            [
+                "section_text" => "Finance",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.finance.index", "text" => "Data Keuangan"],
+                    ["href" => "admin.finance.create", "text" => "Tambah Keuangan"]
+                ]
+            ],
         ],
         "text" => "Manajemen Website",
         "is_multi" => true,

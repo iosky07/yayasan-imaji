@@ -279,6 +279,25 @@ class Main extends Component
                 ];
                 break;
 
+            case 'finance':
+                $finances = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.finance',
+                    "finances" => $finances,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.finance.create'),
+                            'create_new_text' => 'Buat Keuangan Baru',
+                            'export' => '#',
+                            'export_text' => 'Export'
+                        ]
+                    ])
+                ];
+                break;
+
             default:
                 # code...
                 break;

@@ -1,5 +1,5 @@
 <div>
-    <x-data-table :data="$data" :model="$tags">
+    <x-data-table :data="$data" :model="$contentTypes">
         <x-slot name="head">
             <tr>
                 <th><a wire:click.prevent="sortBy('id')" role="button" href="#">
@@ -18,7 +18,7 @@
             </tr>
         </x-slot>
         <x-slot name="body">
-            @foreach ($tags as $m)
+            @foreach ($contentTypes as $m)
                 <tr x-data="window.__controller.dataTableController({{ $m->id }})">
                     <td>{{ $m->id }}</td>
                     <td>{{ $m->title }}</td>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\BudgetController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\ContentTypeController;
 use App\Http\Controllers\Admin\FaqController;
+use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\ProjectBudgetController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\StatusBudgetController;
@@ -62,6 +63,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verif
     Route::resource('faq', FaqController::class);
     Route::resource('budget', BudgetController::class);
     Route::resource('report', ReportController::class);
+    Route::resource('finance', FinanceController::class);
 //    Route::middleware(['checkRole:1']){}
     Route::get('/user', [ UserController::class, "index" ])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');
