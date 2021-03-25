@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/logo/mimpi-indonesia.png')}}" rel="icon">
+  <link href="{{asset('assets/img/logo/mimpi-indonesia-fix.png')}}" rel="icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -52,7 +52,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo"><img style="margin-right: 10px" src="assets/img/logo/mimpi-indonesia-3.jpg" alt=""></a>
+      <a href="index.html" class="logo"><img style="margin-right: 10px" src="assets/img/logo/mimpi-indonesia-fix.png" alt=""></a>
       <h3 class="logo mr-auto">MIMPI <span style="color: #dd0000">INDONESIA</span></h3>
       <!-- Uncomment below if you prefer to use an image logo -->
 

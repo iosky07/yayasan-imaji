@@ -446,18 +446,23 @@ h1, h2, h3, h4, h5, h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  background: url("../img/yayasan-bg-example.jpeg") no-repeat center center;
-  background-size: contain; /*i think its better to use contain if you;re using a large png*/
-  height: 100vh!important;
-  width: 100hw!important;
-  overflow:visible;
+  /*background: url("../img/yayasan-bg-example.jpeg") no-repeat center center;*/
+  /*background-size: contain; !*i think its better to use contain if you;re using a large png*!*/
+  /*height: 100vh!important;*/
+  /*width: 100hw!important;*/
+  /*overflow:visible;*/
 
+  /*width: 100%;*/
+  /*height: 75vh;*/
+  /*background: url("../img/yayasan-bg-example.jpeg") top left;*/
+  /*background-size: cover;*/
+  /*position: relative;*/
 
-  /* width: 100%;
-  height: 75vh;
-  background: url("../img/hero-bg.jpg") top left;
-  background-size: cover;
-  position: relative; */
+    width: 100%;
+    height: 100vh;
+    background: url("../img/yayasan-bg-example.jpeg") top;
+    background-size: cover;
+    position: relative;
 }
 
 #hero:before {

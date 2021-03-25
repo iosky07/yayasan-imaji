@@ -68,6 +68,12 @@ class FormContent extends Component
             ContentTag::create($this->contentTags);
         }
 
+        $this->emit('swal:alert', [
+            'type'    => 'success',
+            'title'   => 'Data berhasil masuk',
+            'timeout' => 3000,
+            'icon'=>'success'
+        ]);
         $this->emit('redirect');
     }
 

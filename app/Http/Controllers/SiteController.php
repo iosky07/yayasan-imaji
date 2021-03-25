@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Content;
 use App\Models\Gallery;
+use App\Models\Instagram;
 use App\Models\Member;
 use App\Models\Regulation;
 use Illuminate\Http\Request;
@@ -12,9 +13,10 @@ class SiteController extends Controller
 {
     public function beranda() {
         $content = Content::orderBy('id','desc')->get()->take(3);
+        $instagram = Instagram::orderBy('id','desc')->get()->take(3);
         $galleries = Gallery::orderBy('id','desc')->get()->take(7);
 //        dd($content);
-        return view('pages.page-main', compact('content', 'galleries'));
+        return view('pages.page-main', compact('content', 'galleries', 'instagram'));
     }
 
     public function blog() {

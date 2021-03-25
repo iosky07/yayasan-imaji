@@ -1,10 +1,10 @@
 @php
 $links = [
-    [
-        "href" => "admin.dashboard",
-        "text" => "Dashboard",
-        "is_multi" => false,
-    ],
+//    [
+//        "href" => "admin.dashboard",
+//        "text" => "Dashboard",
+//        "is_multi" => false,
+//    ],
     [
         "href" => [
             [
@@ -55,6 +55,20 @@ $links = [
                     ["href" => "admin.faq.create", "text" => "Tambah Faq"]
                 ]
             ],
+                        [
+                "section_text" => "Instagram",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.instagram.index", "text" => "Data Instagram"],
+                    ["href" => "admin.instagram.create", "text" => "Tambah Instagram"]
+                ]
+            ],
+        ],
+        "text" => "Manajemen Website",
+        "is_multi" => true,
+    ],
+        [
+        "href" => [
             [
                 "section_text" => "Budget",
                 "section_icon" => "fa fa-file",
@@ -88,7 +102,7 @@ $links = [
                 ]
             ],
         ],
-        "text" => "Manajemen Website",
+        "text" => "Manajemen Laporan",
         "is_multi" => true,
     ],
 ];

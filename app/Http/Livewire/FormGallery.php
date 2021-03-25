@@ -38,12 +38,18 @@ class FormGallery extends Component
 
     public function create()
     {
-        dd($this->gallery);
+//        dd($this->gallery);
         $this->gallery['thumbnail'] = md5(rand()).'.'.$this->thumbnail->getClientOriginalExtension();
         $this->thumbnail->storeAs('public/thumbnail/gallery/', $this->gallery['thumbnail']);
 
         Gallery::create($this->gallery);
 
+        $this->emit('swal:alert', [
+            'type'    => 'success',
+            'title'   => 'Data berhasil masuk',
+            'timeout' => 3000,
+            'icon'=>'success'
+        ]);
         $this->emit('redirect');
     }
 
