@@ -1,6 +1,6 @@
 <div class="form-group col-span-6 sm:col-span-5" wire:ignore>
     <label for="{{$model}}">{{$title}}</label>
-    <select id="{{$model}}" class="form-control select2" multiple="">
+    <select id="{{$model}}" class="form-control select2" multiple="" required>
         @for($i=0;$i<count($options) ;$i++)
             <option value="{{$options[$i]['value']}}" {{ $isSelected($options[$i]['value']) ? 'selected="selected"' : '' }}>
 

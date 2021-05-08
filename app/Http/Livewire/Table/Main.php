@@ -133,7 +133,7 @@ class Main extends Component
                     ->paginate($this->perPage);
 
                 return [
-                    "view" => 'livewire.table.tag',
+                    "view" => 'livewire.table.content-type',
                     "contentTypes" => $contentTypes,
                     "data" => array_to_object([
                         'href' => [
