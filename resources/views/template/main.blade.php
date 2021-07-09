@@ -29,6 +29,8 @@
 
     <!-- Scripts -->
     <script defer src="{{ asset('vendor/alpine.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
 </head>
 
 <body>
@@ -37,8 +39,8 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">yayasan.mimpiindonesia@gmail.com</a>
-        <i class="icofont-phone"></i> +62 82139283179
+        <i class="icofont-envelope"></i> <a href="mailto:yayasan.mimpiindonesia@gmail.com">yayasan.mimpiindonesia@gmail.com</a>
+        <i class="icofont-phone"></i> <a href="https://wa.me/6282139283179">+62 82139283179</a>
       </div>
       <div class="social-links">
         <a href="https://twitter.com/YayasanMimpi" class="twitter"><i class="icofont-twitter"></i></a>
@@ -123,8 +125,9 @@
           <div class="col-lg-6">
             <h4>Subscribe</h4>
             <p>Masukkan e-mail anda untuk mendapat informasi up-to-date dari kami.</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
+            <form class="sweet" action="{{ route('subscribe') }}" method="post">
+                @csrf
+                <input class="sweet" type="email" name="email"><input class="sweet" type="submit" value="Subscribe">
             </form>
           </div>
         </div>
@@ -200,6 +203,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.green.min.css"/>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+  <script>
+      document.querySelector(".sweet").addEventListener('click', function(){
+          Swal.fire("Our First Alert", "With some body text and success icon!", "success");
+      });
+  </script>
   <script>
       jQuery(document).ready(function($){
           $('.owl-carousel').owlCarousel({

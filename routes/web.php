@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProjectBudgetController;
 use App\Http\Controllers\Admin\ReportController;
 use App\Http\Controllers\Admin\SpjController;
 use App\Http\Controllers\Admin\StatusBudgetController;
+use App\Http\Controllers\Admin\SubscribeController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\Admin\TypeBudgetController;
 use App\Http\Controllers\GalleryController;
@@ -55,6 +56,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verif
     Route::resource('finance', FinanceController::class);
     Route::resource('spj', SpjController::class);
     Route::resource('instagram', InstagramController::class);
+    Route::resource('subscribe', SubscribeController::class);
 //    Route::middleware(['checkRole:1']){}
     Route::get('/user', [ UserController::class, "index" ])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

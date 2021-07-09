@@ -55,12 +55,19 @@ $links = [
                     ["href" => "admin.faq.create", "text" => "Tambah Faq"]
                 ]
             ],
-                        [
+            [
                 "section_text" => "Instagram",
                 "section_icon" => "fa fa-file",
                 "section_list" => [
                     ["href" => "admin.instagram.index", "text" => "Data Instagram"],
                     ["href" => "admin.instagram.create", "text" => "Tambah Instagram"]
+                ]
+            ],
+            [
+                "section_text" => "Subscriber",
+                "section_icon" => "fa fa-file",
+                "section_list" => [
+                    ["href" => "admin.subscribe.index", "text" => "Data Subscriber"],
                 ]
             ],
         ],
