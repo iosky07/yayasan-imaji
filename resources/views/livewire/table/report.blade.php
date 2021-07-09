@@ -10,14 +10,6 @@
                     Judul
                     @include('components.sort-icon', ['field' => 'title'])
                 </a></th>
-                <th><a wire:click.prevent="sortBy('content')" role="button" href="#">
-                    Konten
-                    @include('components.sort-icon', ['field' => 'content'])
-                </a></th>
-                <th><a wire:click.prevent="sortBy('thumbnail')" role="button" href="#">
-                    Gambar
-                    @include('components.sort-icon', ['field' => 'thumbnail'])
-                </a></th>
                 <th><a wire:click.prevent="sortBy('created_at')" role="button" href="#">
                     Tanggal Dibuat
                     @include('components.sort-icon', ['field' => 'created_at'])
@@ -30,8 +22,6 @@
                 <tr x-data="window.__controller.dataTableController({{ $m->id }})">
                     <td>{{ $m->id }}</td>
                     <td>{{ $m->title }}</td>
-                    <td>{{ $m->content }}</td>
-                    <td><img src="{{ asset('storage/thumbnail/report/'.$m->thumbnail) }}" alt="" style="width: 200px"></td>
                     <td>{{ $m->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">
                         <a role="button" href="{{route('admin.report.edit', $m->id)}}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>

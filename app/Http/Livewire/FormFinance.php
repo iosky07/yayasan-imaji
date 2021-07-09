@@ -18,6 +18,7 @@ class FormFinance extends Component
 
     public function mount()
     {
+        $this->financy['type'] = 'Barang';
 
         if ($this->dataId!=''){
             $m = Finance::findOrFail($this->dataId);
@@ -37,10 +38,13 @@ class FormFinance extends Component
             ['value'=>'Invoice','title'=>'Invoice'],
             ['value'=>'Jasa','title'=>'Jasa'],
         ];
+//        dd($this->optionTypes);
+//        dd($this->financy);
     }
 
     public function create()
     {
+//        dd($this->file);
         $this->financy['file'] = md5(rand()).'.'.$this->file->getClientOriginalExtension();
         $this->file->storeAs('public/file/finance/', $this->financy['file']);
 

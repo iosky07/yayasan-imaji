@@ -37,13 +37,13 @@
   <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
     <div class="container d-flex">
       <div class="contact-info mr-auto">
-        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">182410101078@students.unej.ac.id</a>
-        <i class="icofont-phone"></i> +62 82234077219
+        <i class="icofont-envelope"></i> <a href="mailto:contact@example.com">yayasan.mimpiindonesia@gmail.com</a>
+        <i class="icofont-phone"></i> +62 82139283179
       </div>
       <div class="social-links">
-        <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+        <a href="https://twitter.com/YayasanMimpi" class="twitter"><i class="icofont-twitter"></i></a>
         <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
-        <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+        <a href="https://www.instagram.com/mimpi_indonesia/" class="instagram"><i class="icofont-instagram"></i></a>
       </div>
     </div>
   </div>
@@ -52,7 +52,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <a href="index.html" class="logo"><img style="margin-right: 10px" src="assets/img/logo/mimpi-indonesia-fix.png" alt=""></a>
+      <a href="{{ route('main-landing') }}" class="logo"><img style="margin-right: 10px" src="assets/img/logo/mimpi-indonesia-fix.png" alt=""></a>
       <h3 class="logo mr-auto">MIMPI <span style="color: #dd0000">INDONESIA</span></h3>
       <!-- Uncomment below if you prefer to use an image logo -->
 
@@ -141,8 +141,8 @@
               Jl. Tawang Mangu 6, No. 10 <br>
               Sumbersari, Jember, Jawa Timur <br>
               Indonesia <br><br>
-              <strong>Telepon:</strong> +62 82234077219<br>
-              <strong>Email:</strong> 182410101078@students.unej.ac.id<br>
+              <strong>Telepon:</strong> +62 82139283179<br>
+              <strong>Email:</strong> yayasan.mimpiindonesia@gmail.com<br>
             </p>
           </div>
 
@@ -160,11 +160,9 @@
             <h4>Sosial Media Kami</h4>
             <p>Ikuti perkembangan lebih lanjut melalui <br> sosial media kami: </p>
             <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="https://twitter.com/YayasanMimpi" class="twitter"><i class="bx bxl-twitter"></i></a>
               <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              <a href="https://www.instagram.com/mimpi_indonesia/" class="instagram"><i class="bx bxl-instagram"></i></a>
             </div>
           </div>
 
