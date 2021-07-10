@@ -3,24 +3,12 @@
 
         <x-input type="text" title="Judul" model="report.title"/>
 
-        <x-summernote title="Isi Konten" model="report.contents"/>
+        <x-summernote title="Isi Konten" model="report.content"/>
 
-        <x-input type="file" title="File" model="thumbnail"/>
-        <div wire:loading wire:target="thumbnail">
+        <x-input type="file" title="File" model="file"/>
+        <div wire:loading wire:target="file">
             Proses upload, Harap tunggu...
         </div>
-        @if($action=='create')
-            @if($thumbnail)
-                <img src="{{$thumbnail->temporaryUrl()}}" alt="" style="max-height: 300px">
-            @endif
-        @else
-            @if($thumbnail)
-                <img src="{{$thumbnail->temporaryUrl()}}" alt="" style="max-height: 300px">
-            @else
-                <img src="{{ asset('storage/thumbnail/report/'.$this->content['thumbnail']) }}" alt="" style="max-height: 300px">
-            @endif
-        @endif
-
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 

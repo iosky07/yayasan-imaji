@@ -5,7 +5,7 @@
 
         <x-select :options="$optionTypes" :selected="$financy['type']" title="Tipe" model="financy.type"/>
 
-        <x-input type="text" title="Anggaran" model="financy.money"/>
+        <x-input type="number" title="Anggaran" model="financy.money"/>
 
         <x-input type="text" title="PIC(Internal)" model="financy.pic_internal"/>
 
@@ -15,7 +15,10 @@
 
         <x-input type="text" title="Note" model="financy.note"/>
 
-        <x-input type="file" title="File" model="financy.file"/>
+        @if(auth()->user()->role==1)
+        <x-select :options="$optionStatus" :selected="$financy['status']" title="Status" model="financy.status"/>
+        @endif
+        <x-input type="file" title="File" model="file"/>
 
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>

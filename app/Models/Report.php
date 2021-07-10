@@ -24,7 +24,7 @@ class Report extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'content', 'file', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id','title', 'content', 'file', 'created_at', 'updated_at'];
 
     public static function search($query)
     {

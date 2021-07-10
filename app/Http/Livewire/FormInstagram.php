@@ -24,9 +24,7 @@ class FormInstagram extends Component
 
     public function create()
     {
-//        dd($this->ig);
         Instagram::create($this->ig);
-
         $this->emit('swal:alert', [
             'type'    => 'success',
             'title'   => 'Data berhasil masuk',

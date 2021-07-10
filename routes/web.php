@@ -40,7 +40,7 @@ Route::get('/main', function () { //buat liat template laman utama
 });
 
 //Route::name('admin.')->middleware(['auth:sanctum', 'verified'])->prefix('admin/')->group(function() {
-Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verified'])->group(function() {
+Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified'])->group(function () {
     Route::view('/dashboard', "dashboard")->name('dashboard');
     Route::resource('content', ContentController::class);
     Route::resource('content-type', ContentTypeController::class);
@@ -56,10 +56,13 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum','web', 'verif
     Route::resource('spj', SpjController::class);
     Route::resource('instagram', InstagramController::class);
 //    Route::middleware(['checkRole:1']){}
-    Route::get('/user', [ UserController::class, "index" ])->name('user');
+    Route::get('/user', [UserController::class, "index"])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.edit")->name('user.edit');
 
+    Route::get('/download-file/{path}', function ($path) {
+        return response()->download(storage_path("app/public/" . $path));
+    })->name('download');
 
     Route::group(['middleware' => config('jetstream.middleware', ['web'])], function () {
         Route::group(['middleware' => ['auth', 'verified']], function () {

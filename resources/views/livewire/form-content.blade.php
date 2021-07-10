@@ -17,7 +17,7 @@
             @if($thumbnail)
                 <img src="{{$thumbnail->temporaryUrl()}}" alt="" style="max-height: 300px">
             @else
-                <img src="{{ asset('storage/thumbnail/'.$this->content['thumbnail']) }}" alt="" style="max-height: 300px">
+                <img src="{{ asset('storage/thumbnail/content/'.$this->content['thumbnail']) }}" alt="" style="max-height: 300px">
             @endif
         @endif
 
@@ -25,6 +25,10 @@
         <x-select :options="$optionTypes" :selected="$content['type_id']" title="Tipe" model="content.type_id"/>
 
         <x-select2 :options="$optionTags" :selected="$contentTags" title="Tag" model="contentTags"/>
+
+        @if(auth()->user()->role==1)
+            <x-select :options="$optionStatus" :selected="$content['status']" title="Status" model="content.status"/>
+        @endif
 
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>

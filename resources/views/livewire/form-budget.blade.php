@@ -3,7 +3,7 @@
 
         <x-input type="text" title="Judul" model="budgy.title"/>
 
-        <x-input type="text" title="Anggaran" model="budgy.money"/>
+        <x-input type="number" title="Anggaran" model="budgy.money"/>
 
         <x-select :options="$optionProjects" :selected="$budgy['project_id']" title="Project" model="budgy.project_id"/>
 
@@ -11,6 +11,10 @@
 
         <x-select :options="$optionStatuses" :selected="$budgy['status_id']" title="Status" model="budgy.status_id"/>
 
+        <x-input type="file" title="Masukkan file lampiran" model="file"/>
+        <div wire:loading wire:target="file">
+            Proses upload...
+        </div>
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 

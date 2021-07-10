@@ -24,9 +24,10 @@ class SiteController extends Controller
     }
 
     public function blogShow($id) {
-        $content = Content::whereId($id)->get();
+        $c = Content::findOrFail($id);
+        $c->update(['view'=>$c->view+1]);
 //        dd($content);
-        return view('pages.page-berita', compact('content'));
+        return view('pages.page-berita', compact('c'));
     }
 
     public function gallery() {

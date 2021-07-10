@@ -31,7 +31,7 @@ class Content extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'type_id', 'title', 'contents', 'view', 'slug', 'thumbnail', 'created_at', 'updated_at'];
+    protected $fillable = ['status','user_id', 'type_id', 'title', 'contents', 'view', 'slug', 'thumbnail', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -61,5 +61,9 @@ class Content extends Model
     {
         return empty($query) ? static::query()
             : static::where('title', 'like', '%'.$query.'%');
+    }
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Status');
     }
 }

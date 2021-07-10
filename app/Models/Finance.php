@@ -30,7 +30,7 @@ class Finance extends Model
     /**
      * @var array
      */
-    protected $fillable = ['type', 'title', 'money', 'pic_internal', 'pic_external', 'note', 'publish_date', 'file', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id','status','type', 'title', 'money', 'pic_internal', 'pic_external', 'note', 'publish_date', 'file', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -44,5 +44,11 @@ class Finance extends Model
     {
         return empty($query) ? static::query()
             : static::where('title', 'like', '%'.$query.'%');
-    }
+    }public function status()
+{
+    return $this->belongsTo('App\Models\Status');
+}    public function user()
+{
+    return $this->belongsTo('App\Models\User');
+}
 }
