@@ -1,7 +1,7 @@
 <div id="form-create" class=" card p-4">
     <form wire:submit.prevent="{{ $action }}">
 
-        <x-input type="text" title="Judul RAB" model="spj.title"/>
+        <x-input type="text" title="Judul SPJ" model="spj.title"/>
 
         <x-input type="number" title="Nominal" model="spj.money"/>
 

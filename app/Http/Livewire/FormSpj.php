@@ -26,6 +26,7 @@ class FormSpj extends Component
             'title' => '',
             'money' => '',
             'file' => '',
+            'user_id'=>auth()->id()
         ];
         $this->optionStatus = eloquent_to_options(Status::get(), 'id', 'title');
         if ($this->dataId != '') {
