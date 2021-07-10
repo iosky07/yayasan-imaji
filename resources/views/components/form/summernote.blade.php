@@ -7,19 +7,19 @@
         document.addEventListener('livewire:load', function () {
             $("textarea#{{str_replace('.', '', $model)}}").val(@this.get('{{$model}}'));
             $('#{{str_replace(".", "", $model)}}').summernote({
-
-                toolbar:[
-                //     // This is a Custom Button in a new Toolbar Area
-                //
-                ['insert', ['resizedDataImage']]
-                //
-                //     // You can also add Interaction to an existing Toolbar Area
-                //     // ['style', ['style' ,'resizedDataImage']]
-                ],
+                dialogsInBody: true,
+                tabsize: 2,
+                height: 200,
                 callbacks: {
+                    onImageUpload: function (files) {
+                        for (let i = 0; i < files.length; i++) {
+                            $.upload(files[i]);
+                        }
+                        console.log('file loading');
+                    },
                     onChange: function (content, $editable) {
                     @this.set('{{$model}}', content)
-                    }
+                    },
                 }
             });
         });

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Report;
+use Illuminate\Support\Str;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -12,11 +13,16 @@ class FormReport extends Component
     public $action;
     public $report;
     public $dataId;
-    public $thumbnail;
+    public $file;
 
     public function mount()
     {
-
+        $this->report=[
+            'title'=>'',
+            'content'=>'',
+            'file'=>'',
+            'user_id'=>auth()->id()
+        ];
         if ($this->dataId!=''){
             $m = Report::findOrFail($this->dataId);
             $this->report=[
@@ -29,9 +35,12 @@ class FormReport extends Component
 
     public function create()
     {
-        $this->report['thumbnail'] = md5(rand()).'.'.$this->thumbnail->getClientOriginalExtension();
-        $this->thumbnail->storeAs('public/thumbnail/report/', $this->report['thumbnail']);
-
+        if ($this->file != null) {
+            $filename = Str::slug($this->report['title']) . '-' . rand(0, 1000) . '.' . $this->file->getClientOriginalExtension();
+            $this->file->storeAs('public/report', $filename);
+            $this->report['file'] = 'report/' . $filename;
+        }
+//        dd($this->report);
         Report::create($this->report);
 
         $this->emit('swal:alert', [
@@ -46,9 +55,12 @@ class FormReport extends Component
 
     public function update() {
 
-        $this->thumbnail->storeAs('public/thumbnail/report/', $this->report['thumbnail']);
+        if ($this->file != null) {
+            $filename = Str::slug($this->report['title']) . '-' . rand(0, 1000) . '.' . $this->file->getClientOriginalExtension();
+            $this->file->storeAs('public/report', $filename);
+            $this->report['file'] = 'report/' . $filename;
+        }
         Report::find($this->dataId)->update($this->report);
-
         $this->emit('swal:alert', [
             'type'    => 'success',
             'title'   => 'Data berhasil update',

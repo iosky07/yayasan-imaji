@@ -3,10 +3,12 @@
 
         <x-input type="text" title="Judul RAB" model="spj.title"/>
 
-        <x-input type="text" title="Nominal" model="spj.money"/>
+        <x-input type="number" title="Nominal" model="spj.money"/>
 
         <x-input type="file" title="File" model="file"/>
-
+        @if(auth()->user()->role==1)
+            <x-select :options="$optionStatus" :selected="$spj['status']" title="Status" model="spj.status"/>
+        @endif
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
 

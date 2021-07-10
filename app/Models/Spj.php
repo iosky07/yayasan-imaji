@@ -24,11 +24,17 @@ class Spj extends Model
     /**
      * @var array
      */
-    protected $fillable = ['title', 'money', 'file', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id','status','title', 'money', 'file', 'created_at', 'updated_at'];
 
     public static function search($query)
     {
         return empty($query) ? static::query()
             : static::where('title', 'like', '%'.$query.'%');
-    }
+    }public function status()
+{
+    return $this->belongsTo('App\Models\Status');
+}    public function user()
+{
+    return $this->belongsTo('App\Models\User');
+}
 }

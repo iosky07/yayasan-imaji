@@ -24,8 +24,6 @@ class FormGallery extends Component
     {
 
         $this->gallery['user_id'] = Auth::id();
-//        dd($this->action);
-
         if ($this->dataId!=''){
             $m = Gallery::findOrFail($this->dataId);
             $this->gallery=[
@@ -33,7 +31,6 @@ class FormGallery extends Component
                 'thumbnail'=>$m->thumbnail
             ];
         }
-//        dd($this->gallery);
     }
 
     public function create()

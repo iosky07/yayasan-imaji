@@ -24,7 +24,12 @@ class FormProjectBudget extends Component
     public function create()
     {
         ProjectBudget::create($this->projectBudget);
-
+        $this->emit('swal:alert', [
+            'type'    => 'success',
+            'title'   => 'Berhasil menambahkan data',
+            'timeout' => 3000,
+            'icon'=>'success'
+        ]);
         $this->emit('redirect');
     }
 
@@ -34,7 +39,7 @@ class FormProjectBudget extends Component
 
         $this->emit('swal:alert', [
             'type'    => 'success',
-            'title'   => 'Data berhasil update',
+            'title'   => 'Data berhasil diubah',
             'timeout' => 3000,
             'icon'=>'success'
         ]);
