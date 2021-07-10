@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Spj;
+use App\Models\Status;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
@@ -14,8 +15,11 @@ class FormSpj extends Component
     public $file;
     public $dataId;
 
+    public $optionStatus;
+
     public function mount()
     {
+        $this->optionStatus=eloquent_to_options(Status::get(),'id','title');
         if ($this->dataId!=''){
             $m = Spj::findOrFail($this->dataId);
             $this->spj=[
