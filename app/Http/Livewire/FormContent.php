@@ -55,6 +55,7 @@ class FormContent extends Component
     {
         $this->content['slug'] = Str::slug($this->content['title']);
 
+
 //        dd($this->content['slug']);
         $this->content['thumbnail'] = md5(rand()) . '.' . $this->thumbnail->getClientOriginalExtension();
         $this->thumbnail->storeAs('public/thumbnail/content/', $this->content['thumbnail']);

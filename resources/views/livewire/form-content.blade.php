@@ -3,6 +3,7 @@
 
         <x-input type="text" title="Judul" model="content.title"/>
 
+{{--        <x-summernote title="Isi Konten" model="report.contents"/>--}}
         <x-summernote title="Isi Konten" model="content.contents"/>
 
         <x-input type="file" title="File Gambar" model="thumbnail"/>

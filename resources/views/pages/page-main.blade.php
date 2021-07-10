@@ -4,8 +4,9 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container" data-aos="zoom-out" data-aos-delay="100">
-      <h1>Selamat datang di Website Mimpi Indonesia.</h1>
-      <h2>Yayasan Mimpi Indonesia adalah Yayasan yang baik dan benar..</h2>
+      <h1>Selamat datang di Mimpi Indonesia.</h1>
+        <br>
+      <h5>Mimpi Indonesia didirikan oleh sekelompok anak muda yang memiliki mimpi sama dan berfokus pada penyeimbangan pendidikan formal dan non formal bagi anak-anak. Kami yakin, pendidikan bukan sekadar to transfer a knowledge, lebih dari itu pendidikan bertanggung jawab melahirkan generasi yang berbudaya, berkarakter, dan merdeka. Pendidikan adalah 'Ibu' yang melahirkan 'Manusia Indonesia'.</h5>
       <!-- <div class="d-flex">
         <a href="#about" class="btn-get-started scrollto">Get Started</a>
       </div> -->

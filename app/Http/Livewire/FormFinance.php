@@ -55,6 +55,8 @@ class FormFinance extends Component
             ['value' => 'Invoice', 'title' => 'Invoice'],
             ['value' => 'Jasa', 'title' => 'Jasa'],
         ];
+//        dd($this->optionTypes);
+//        dd($this->financy);
     }
 
     public function create()

@@ -18,6 +18,7 @@
         @if(auth()->user()->role==1)
         <x-select :options="$optionStatus" :selected="$financy['status']" title="Status" model="financy.status"/>
         @endif
+
         <x-input type="file" title="File" model="file"/>
 
         <div class="form-group col-span-6 sm:col-span-5"></div>

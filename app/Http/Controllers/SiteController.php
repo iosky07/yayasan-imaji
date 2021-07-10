@@ -7,7 +7,9 @@ use App\Models\Gallery;
 use App\Models\Instagram;
 use App\Models\Member;
 use App\Models\Regulation;
+use App\Models\Subscribe;
 use Illuminate\Http\Request;
+
 
 class SiteController extends Controller
 {
@@ -41,11 +43,14 @@ class SiteController extends Controller
 
     public function subscribe(Request $request) {
         Subscribe::create(['email'=>$request->email]);
-        return back();
+
+//        return back();
+        return redirect(route('main-landing'))->with('success', 'Task Created Successfully');
     }
 
     public function showsubscriber() {
       $subscribe = Subscribe::class;
+      swal("Good job!", "You clicked the button!", "success");
       return view('pages.page-subscribe', compact('subscribe'));
     }
 
