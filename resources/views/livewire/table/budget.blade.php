@@ -49,7 +49,7 @@
                         <a role="button" x-on:click.prevent="deleteItem" href="#"  class="mr-3"><i
                                 class="fa fa-16px fa-trash text-red-500"></i></a>
                         @if($m->file!=null)
-                            <a role="button" href="{{route('admin.download',$m->file)}}"><i
+                            <a role="button" href="{{route('admin.download',['budget',$m->id])}}"><i
                                     class="fa fa-16px fa-download"></i></a>
                         @endif
                     </td>

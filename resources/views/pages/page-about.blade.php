@@ -1,6 +1,5 @@
 @extends('template.main')
 <!-- ======= Featured Services Section ======= -->
-@section('pagename','Tentang Kami')
 
 @section('content')
 
@@ -54,6 +53,9 @@
                             </div>
                         </li>
                     </ul>
+
+                </div>
+                <div class="col-12">
                     <p>
                         Selain itu, kami berupaya mengisi ceruk yang selama ini kurang diperhatikan dalam pendidikan formal, yakni minat dan bakat. Program ini akan dimulai dengan melakukan analisis masalah pendidikan di desa, pengkategorisasian usia, dan pemetaan minat dan bakat anak untuk kemudian dilakukan pendampingan oleh tutor yang berkompeten selama satu tahun.
                     </p>

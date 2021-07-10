@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\ContentType;
 use App\Models\Gallery;
 use App\Models\Instagram;
 use App\Models\Member;
@@ -21,8 +22,9 @@ class SiteController extends Controller
         return view('pages.page-main', compact('content', 'galleries', 'instagram'));
     }
 
-    public function blog() {
-        return view('pages.page-beritamenu');
+    public function blog($slug) {
+        $cc=ContentType::whereSlug($slug)->firstOrFail();
+        return view('pages.page-beritamenu',['type'=>$cc->id]);
     }
 
     public function blogShow($id) {

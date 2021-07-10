@@ -62,8 +62,13 @@ class Content extends Model
         return empty($query) ? static::query()
             : static::where('title', 'like', '%'.$query.'%');
     }
-    public function status()
+    public static function searchContent($query,$type)
     {
-        return $this->belongsTo('App\Models\Status');
+        return empty($query) ? static::query()->whereStatus(2)->whereTypeId($type)
+            : static::where('title', 'like', '%'.$query.'%')->whereStatus(2)->whereTypeId($type);
+    }
+    public function statusContent()
+    {
+        return $this->belongsTo('App\Models\Status','status');
     }
 }

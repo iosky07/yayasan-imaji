@@ -28,13 +28,13 @@ Route::get('/dashboard', function () {
 });
 
 Route::get('/', [SiteController::class, 'beranda'])->name('main-landing');
-Route::get('/berita', [SiteController::class, 'blog'])->name('blog');
-Route::get('/berita/{id}', [SiteController::class, 'blogShow'])->name('blog-show');
+
+Route::get('/konten/{slug}', [SiteController::class, 'blogShow'])->name('blog-show');
 Route::get('/galeri', [SiteController::class, 'gallery'])->name('gallery');
 Route::get('/tentang-kami', [SiteController::class, 'about'])->name('about');
 Route::post('/subscribe', [SiteController::class, 'subscribe'])->name('subscribe');
 Route::post('/aspirasi', [SiteController::class, 'aspiration'])->name('aspiration');
-
+Route::get('/{slug}', [SiteController::class, 'blog'])->name('blog');
 
 Route::get('/main', function () { //buat liat template laman utama
     return view('pages.page-main');
@@ -62,8 +62,10 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::view('/user/new', "pages.user.create")->name('user.new');
     Route::view('/user/edit/{userId}', "pages.user.edit")->name('user.edit');
 
-    Route::get('/download-file/{path}', function ($path) {
-        return response()->download(storage_path("app/public/" . $path));
+    Route::get('/download-file/{type}/{id}', function ($type,$id) {
+        if ($type=='budget') {
+            return response()->download(storage_path("app/public/" . \App\Models\Budget::find($id)->file));
+        }
     })->name('download');
 
     Route::group(['middleware' => config('jetstream.middleware', ['web'])], function () {

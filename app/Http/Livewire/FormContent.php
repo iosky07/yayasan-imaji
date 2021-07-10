@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Content;
 use App\Models\ContentTag;
 use App\Models\ContentType;
+use App\Models\Status;
 use App\Models\Tag;
 use Illuminate\Support\Str;
 use Livewire\Component;
@@ -20,6 +21,7 @@ class FormContent extends Component
     public $contentTags;
     public $contentTypes;
     public $optionTags;
+    public $optionStatus;
     public $optionTypes;
     public $thumbnail;
 
@@ -36,6 +38,7 @@ class FormContent extends Component
         ];
         $this->contentTags = [];
         $this->optionTags = eloquent_to_options(Tag::get(), 'id', 'title');
+        $this->optionStatus=eloquent_to_options(Status::get(),'id','title');
         $this->optionTypes = eloquent_to_options(ContentType::get(), 'id', 'title');
         if ($this->dataId != '') {
             $this->contentTags = ContentTag::whereContentId($this->dataId)->pluck('tag_id')->toArray();

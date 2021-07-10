@@ -14,9 +14,9 @@
                     Tipe
                     @include('components.sort-icon', ['field' => 'type_id'])
                 </a></th>
-                <th><a wire:click.prevent="sortBy('thumbnail')" role="button" href="#">
-                    Gambar
-                    @include('components.sort-icon', ['field' => 'thumbnail'])
+                <th><a wire:click.prevent="sortBy('status')" role="button" href="#">
+                    status
+                    @include('components.sort-icon', ['field' => 'status'])
                 </a></th>
                 <th><a wire:click.prevent="sortBy('view')" role="button" href="#">
                     Views
@@ -35,7 +35,8 @@
                     <td>{{ $b->id }}</td>
                     <td>{{ $b->title }}</td>
                     <td>{{ $b->contentType->title }}</td>
-                    <td><img src="{{ asset('storage/thumbnail/content/'.$b->thumbnail) }}" alt="" style="width: 200px"></td>
+                    <td>{{ $b->statusContent->title }}</td>
+{{--                    <td><img src="{{ asset('storage/thumbnail/content/'.$b->thumbnail) }}" alt="" style="width: 200px"></td>--}}
                     <td>{{ $b->view }}</td>
                     <td>{{ $b->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">

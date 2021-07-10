@@ -59,40 +59,69 @@
                         ["href" => "admin.instagram.create", "text" => "Tambah Instagram"]
                     ]
                 ],
+                [
+                    "section_text" => "subscribe",
+                    "section_icon" => "fa fa-envelope",
+                    "section_list" => [
+                        ["href" => "admin.subscribe.index", "text" => "Data subscribe"],
+
+                    ]
+                ],
             ],
             "text" => "Manajemen Website",
             "is_multi" => true,
         ],
             [
-                "section_text" => "Faq",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.faq.index", "text" => "Data Faq"],
-                    ["href" => "admin.faq.create", "text" => "Tambah Faq"]
-                ]
+            "href" => [
+                [
+                    "section_text" => "Pelaporan",
+                    "section_icon" => "fa fa-file",
+                    "section_list" => [
+                        ["href" => "admin.report.index", "text" => "Data laporan"],
+                        ["href" => "admin.report.create", "text" => "Tambah laporan"]
+                    ]
+                ],
+                [
+                    "section_text" => "Jenis anggaran",
+                    "section_icon" => "fa fa-tag",
+                    "section_list" => [
+                        ["href" => "admin.project-budget.index", "text" => "Data anggaran"],
+                        ["href" => "admin.project-budget.create", "text" => "Tambah data anggaran"]
+                    ]
+                ],
+                [
+                    "section_text" => "Keuangan",
+                    "section_icon" => "fa fa-money",
+                    "section_list" => [
+                        ["href" => "admin.budget.index", "text" => "Data keuangan"],
+                        ["href" => "admin.budget.create", "text" => "Tambah data keuangan"]
+                    ]
+                ],
+                [
+                    "section_text" => "RAB",
+                    "section_icon" => "fa fa-file",
+                    "section_list" => [
+                        ["href" => "admin.finance.index", "text" => "Data RAB"],
+                        ["href" => "admin.finance.create", "text" => "Tambah RAB"]
+                    ]
+                ],
+                 [
+                    "section_text" => "SPJ",
+                    "section_icon" => "fa fa-file",
+                    "section_list" => [
+                        ["href" => "admin.spj.index", "text" => "Data SPJ"],
+                        ["href" => "admin.spj.create", "text" => "Tambah SPJ"]
+                    ]
+                ],
             ],
-            [
-                "section_text" => "Instagram",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.instagram.index", "text" => "Data Instagram"],
-                    ["href" => "admin.instagram.create", "text" => "Tambah Instagram"]
-                ]
-            ],
-            [
-                "section_text" => "Subscriber",
-                "section_icon" => "fa fa-file",
-                "section_list" => [
-                    ["href" => "admin.subscribe.index", "text" => "Data Subscriber"],
-                ]
-            ],
+            "text" => "Manajemen Laporan",
+            "is_multi" => true,
         ],
     ];
 }else{
     $links = [
         [
             "href" => [
-
                 [
                     "section_text" => "Konten",
                     "section_icon" => "fa fa-blog",
@@ -148,8 +177,6 @@
                         ["href" => "admin.report.create", "text" => "Tambah laporan"]
                     ]
                 ],
-
-
                 [
                     "section_text" => "RAB",
                     "section_icon" => "fa fa-file",

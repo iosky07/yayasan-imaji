@@ -11,12 +11,13 @@ class SearchContent extends Component
     use WithPagination;
     public $search='';
     public $blog;
+    public $type;
 
     public function searching(){
 
 //        dd($this->search);
         $this->blog=Content::class;
-        return Content::search($this->search)
+        return Content::searchContent($this->search,$this->type)
         ->paginate(3);
     }
 
