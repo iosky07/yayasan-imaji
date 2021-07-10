@@ -6,6 +6,9 @@
         <x-input type="number" title="Nominal" model="spj.money"/>
 
         <x-input type="file" title="File" model="file"/>
+        <div wire:loading wire:target="file">
+            Proses upload...
+        </div>
         @if(auth()->user()->role==1)
             <x-select :options="$optionStatus" :selected="$spj['status']" title="Status" model="spj.status"/>
         @endif
