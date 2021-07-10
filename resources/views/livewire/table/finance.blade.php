@@ -51,7 +51,11 @@
 {{--                    <td>{{ $m->created_at->format('d M Y H:i') }}</td>--}}
                     <td class="whitespace-no-wrap row-action--icon">
                         <a role="button" href="{{route('admin.finance.edit', $m->id)}}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>
-                        <a role="button" x-on:click.prevent="deleteItem" href="#"><i class="fa fa-16px fa-trash text-red-500"></i></a>
+                        <a role="button" x-on:click.prevent="deleteItem" href="#" class="mr-3"><i class="fa fa-16px fa-trash text-red-500"></i></a>
+                        @if($m->file!=null)
+                            <a role="button" href="{{route('admin.download',['rab',$m->id])}}"><i
+                                    class="fa fa-16px fa-download"></i></a>
+                        @endif
                     </td>
                 </tr>
             @endforeach

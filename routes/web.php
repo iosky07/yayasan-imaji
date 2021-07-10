@@ -65,6 +65,13 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('/download-file/{type}/{id}', function ($type,$id) {
         if ($type=='budget') {
             return response()->download(storage_path("app/public/" . \App\Models\Budget::find($id)->file));
+        }else if ($type=='spj') {
+            return response()->download(storage_path("app/public/" . \App\Models\Spj::find($id)->file));
+        }
+        else if ($type=='rab') {
+            return response()->download(storage_path("app/public/" . \App\Models\Finance::find($id)->file));
+        }else if ($type=='report') {
+            return response()->download(storage_path("app/public/" . \App\Models\Report::find($id)->file));
         }
     })->name('download');
 
